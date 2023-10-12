@@ -2,9 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
+using System.Net;
 
 namespace MyClass.DAO
 {
@@ -12,13 +13,12 @@ namespace MyClass.DAO
     public class CategoriesDAO
     {
         private MyDBContext db = new MyDBContext();
-        //INDEX
-        public List<Categories> getList()
+        //index
+        public List<Categories>getList()
         {
             return db.Categories.ToList();
         }
-
-        //Hien thi danh sach theo trang thai
+        //index dua vao status 1 2 con 0 = thung rac
         public List<Categories> getList(string status = "All")
         {
             List<Categories> list = null;
@@ -34,20 +34,20 @@ namespace MyClass.DAO
                 case "Trash":
                     {
                         list = db.Categories
-                           .Where(m => m.Status == 0)
-                           .ToList();
+                            .Where(m => m.Status == 0)
+                            .ToList();
                         break;
                     }
                 default:
                     {
-                        list = db.Categories.ToList();
+                        list=db.Categories.ToList();
                         break;
                     }
             }
             return list;
         }
-
-        public Categories getRow(int? id)
+        //details
+        public Categories getRow(int ?id) 
         {
             if (id == null)
             {
@@ -55,10 +55,10 @@ namespace MyClass.DAO
             }
             else
             {
-                return db.Categories.Find(id);
+                return  db.Categories.Find(id);
             }
-
         }
+        //create
         public int Insert(Categories row)
         {
             db.Categories.Add(row);
@@ -74,8 +74,5 @@ namespace MyClass.DAO
             db.Categories.Remove(row);
             return db.SaveChanges();
         }
-
-
-
     }
 }
