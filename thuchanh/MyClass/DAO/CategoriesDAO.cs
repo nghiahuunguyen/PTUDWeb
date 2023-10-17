@@ -1,24 +1,24 @@
 ﻿using MyClass.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data.Entity;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net;
 
 namespace MyClass.DAO
 {
-
     public class CategoriesDAO
     {
         private MyDBContext db = new MyDBContext();
-        //index
-        public List<Categories>getList()
+
+        //INDEX
+        public List<Categories> getList()
         {
             return db.Categories.ToList();
         }
-        //index dua vao status 1 2 con 0 = thung rac
+
+        //INDEX dua vao Status =1,2, con Status =0 == thung rac
         public List<Categories> getList(string status = "All")
         {
             List<Categories> list = null;
@@ -40,14 +40,15 @@ namespace MyClass.DAO
                     }
                 default:
                     {
-                        list=db.Categories.ToList();
+                        list = db.Categories.ToList();
                         break;
                     }
             }
             return list;
         }
-        //details
-        public Categories getRow(int ?id) 
+
+        //DETAILS
+        public Categories getRow(int? id)
         {
             if (id == null)
             {
@@ -55,20 +56,25 @@ namespace MyClass.DAO
             }
             else
             {
-                return  db.Categories.Find(id);
+                return db.Categories.Find(id);
             }
         }
-        //create
+
+        //CREATE
         public int Insert(Categories row)
         {
             db.Categories.Add(row);
             return db.SaveChanges();
         }
+
+        //UPDATE
         public int Update(Categories row)
         {
             db.Entry(row).State = EntityState.Modified;
             return db.SaveChanges();
         }
+
+        //DELETE
         public int Delete(Categories row)
         {
             db.Categories.Remove(row);
