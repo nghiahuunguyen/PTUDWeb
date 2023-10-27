@@ -1,0 +1,103 @@
+﻿@model IEnumerable<thimau.Models.Sinhvien>
+@{
+    ViewBag.Title = "Tìm kiếm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p>
+    @Html.ActionLink("Giới thiệu", "Gioithieu") | @Html.ActionLink("Thêm mới", "Create") |
+    @Html.ActionLink("Danh sách", "Index") |  @Html.ActionLink("Tìm kiếm", "timkiem_mssv")
+</p>
+<h2> Tìm kiếm</h2>
+<div class="row mt-2">
+    <div class="col-md-12">
+        <form class="d-flex gap-2" method="post" action="@Url.Action("timkiem_mssv", "Sinhviens")">
+            @Html.AntiForgeryToken()
+            <span class="input-group-text">Mã sinh viên</span>
+            <input type="text" class="form-control" name="filter" placeholder="Nhập mã SV" />
+            <span class="input-group-text">Họ tên</span>
+            <input type="text" class="form-control" name="filterName" placeholder="Nhập họ và tên" />
+            <button class="btn btn-success" type="submit">Tìm kiếm</button>
+            <button class="btn btn-secondary" type="reset">
+                <a href="@Url.Action("Create", "Sinhviens")" class="btn-link">Thêm mới</a>
+            </button>
+        </form>
+    </div>
+</div>
+<h2>Danh sách sinh viên</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã SV
+            </th>
+            <th>
+                Họ
+            </th>
+            <th>
+                Tên
+            </th>
+            <th>
+                Ngày sinh
+            </th>
+            <th>
+                Giới tính
+            </th>
+            <th>
+                Ảnh sinh viên
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Lớp
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Masv
+                    </td>
+                    <td>
+                        @item.Hosv
+                    </td>
+                    <td>
+                        @item.Tensv
+                    </td>
+                    <td>
+                        @item.Ngaysinh
+                    </td>
+                    <td>
+                        @{
+                            bool gtinh = item.Gioitinh ?? false;
+                            string gioiTinhText = gtinh ? "Nam" : "Nữ";
+                        }
+                        @gioiTinhText
+                    </td>
+                    <td>
+                        <img src="@Url.Content("~/img/" + item.Anhsv)" alt="Hình ảnh" style="width: 100px; height: 100px" />
+                    </td>
+                    <td>
+                        @item.Diachi
+                    </td>
+                    <td>
+                        @item.Lop.Tenlop
+                    </td>
+                    <td>
+                        @Html.ActionLink("Xem chi tiết", "Details", new { id = item.Masv })
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8">Không có thông tin cần tìm.</td>
+            </tr>
+        }
+    </tbody>
+</table>
