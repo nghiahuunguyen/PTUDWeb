@@ -47,7 +47,6 @@
                                 <th>@Html.DisplayNameFor(model => model.Slug)</th>
                                 <th>@Html.DisplayNameFor(model => model.CatId)</th>
                                 <th>@Html.DisplayNameFor(model => model.SupplierID)</th>
-
                                 <th>@Html.DisplayNameFor(model => model.Price)</th>
                                 <th>@Html.DisplayNameFor(model => model.Amount)</th>
                                 <th>@Html.DisplayNameFor(model => model.Image)</th>
@@ -66,7 +65,7 @@
 
                                     <td>@Html.DisplayFor(modelItem => item.Price)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Amount)</td>
-                                    <td><img src="~/Public/img/product/" alt="Img" class="img-fluid" /></td>
+                                    <td><img src="~/Public/img/product/@item.Image" alt="Img" class="img-fluid" /></td>
                                     <td>
                                         @if (item.Status == 1)
                                         {
