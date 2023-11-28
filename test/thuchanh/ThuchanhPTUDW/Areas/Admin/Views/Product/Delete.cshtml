@@ -1,0 +1,82 @@
+﻿@model MyClass.Model.Products
+
+@{
+    ViewBag.Title = "Xác nhân xóa mẫu tin";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section header{
+    <link href="~/Public/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+@section footer{
+    <script src="~/Public/js/jquery.dataTables.min.js"></script>
+    <script>let table = new DataTable('#myTable');</script>
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section class="content my-2">
+
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong class="text-danger">BẠN CÓ CHẮC CHẮN XÓA MỤC NÀY?</strong>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a href="@Url.Action("Index", "Product")" class="btn-sm btn-info"> <i class="fa fa-long-arrow-alt-left"></i> Quay lại</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    @*Hien thi noi dung thong bao ngay ben tren bang du lieu*@
+                    @Html.Partial("Message")
+                    <table class="table table-bordered table-striped" id="myTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>@Html.DisplayNameFor(model => model.Id)</th>
+                                <th>@Html.DisplayNameFor(model => model.Name)</th>
+                                <th>@Html.DisplayNameFor(model => model.Slug)</th>
+                                <th>@Html.DisplayNameFor(model => model.CatId)</th>
+                                <th>@Html.DisplayNameFor(model => model.SupplierID)</th>
+                                <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                <th>@Html.DisplayNameFor(model => model.Amount)</th>
+                                <th>@Html.DisplayNameFor(model => model.Image)</th>
+                                <th>Xác nhận</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" name="checkid" value="" /></td>
+                                <td>@Html.DisplayFor(model => model.Id)</td>
+                                <td>@Html.DisplayFor(model => model.Name)</td>
+                                <td>@Html.DisplayFor(model => model.Slug)</td>
+                                <td>@Html.DisplayFor(model => model.CatId)</td>
+                                <td>@Html.DisplayFor(model => model.SupplierID)</td>
+
+                                <td>@Html.DisplayFor(model => model.Price)</td>
+                                <td>@Html.DisplayFor(model => model.Amount)</td>
+                                <td><img src="~/Public/img/product/@Model.Image" alt="Img" class="img-fluid" /></td>
+                                <td>
+                                    <div class="form-actions no-color">
+                                        <button class="btn-sm btn-danger" type="submit" name="Delete"> Xóa [Delete] <i class="fa fa-trash"></i> </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table><!-- /.card-body -->
+                </div>
+            </div><!-- /.card -->
+        </section> <!-- /.content -->
+    </div><!-- /.content-wrapper -->
+}
+
+
