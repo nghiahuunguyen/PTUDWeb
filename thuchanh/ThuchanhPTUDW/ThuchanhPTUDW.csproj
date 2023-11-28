@@ -179,9 +179,12 @@
     <Compile Include="Areas\Admin\Controllers\SupplierController.cs" />
     <Compile Include="Areas\Admin\Controllers\TopicController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GiohangController.cs" />
+    <Compile Include="Controllers\LienheController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Controllers\TimkiemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2876,10 +2879,14 @@
     <Content Include="Views\Shared\_LayoutSite.cshtml" />
     <Content Include="Views\Site\Index.cshtml" />
     <Content Include="Views\Module\MainMenu.cshtml" />
+    <Content Include="Views\Site\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\Contact\" />
+    <Folder Include="Views\Giohang\" />
+    <Folder Include="Views\Timkiem\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
