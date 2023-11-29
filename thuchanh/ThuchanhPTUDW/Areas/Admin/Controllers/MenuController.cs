@@ -55,10 +55,10 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
                         Menus menu = new Menus();
                         menu.Name = categories.Name;
                         menu.Link = categories.Slug;
-                        menu.TableID = categories.Id;
+                        menu.TableId = categories.Id;
                         menu.TypeMenu = "category";
                         menu.Position = form["Position"];
-                        menu.ParentID = 0;
+                        menu.ParentId = 0;
                         menu.Order = 0;
                         menu.CreateBy = Convert.ToInt32(Session["UserID"].ToString());
                         menu.CreateAt = DateTime.Now;
@@ -91,10 +91,10 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
                         Menus menu = new Menus();
                         menu.Name = topics.Name;
                         menu.Link = topics.Slug;
-                        menu.TableID = topics.Id;
+                        menu.TableId = topics.Id;
                         menu.TypeMenu = "topic";
                         menu.Position = form["Position"];
-                        menu.ParentID = 0;
+                        menu.ParentId = 0;
                         menu.Order = 0;
                         menu.CreateBy = Convert.ToInt32(Session["UserID"].ToString());
                         menu.CreateAt = DateTime.Now;
@@ -126,10 +126,10 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
                         Menus menu = new Menus();
                         menu.Name = post.Title;
                         menu.Link = post.Slug;
-                        menu.TableID = post.Id;
+                        menu.TableId = post.Id;
                         menu.TypeMenu = "page";
                         menu.Position = form["Position"];
-                        menu.ParentID = 0;
+                        menu.ParentId = 0;
                         menu.Order = 0;
                         menu.CreateBy = Convert.ToInt32(Session["UserID"].ToString());
                         menu.CreateAt = DateTime.Now;
@@ -158,7 +158,7 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
                     //menu.TableId = post.Id;//vi Table Id allow NULL nen bỏ đi
                     menus.TypeMenu = "custom";
                     menus.Position = form["Position"];
-                    menus.ParentID = 0;
+                    menus.ParentId = 0;
                     menus.Order = 0;
                     menus.CreateBy = Convert.ToInt32(Session["UserID"].ToString());
                     menus.CreateAt = DateTime.Now;
@@ -245,9 +245,9 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
 
-                if (menus.ParentID == null)
+                if (menus.ParentId == null)
                 {
-                    menus.ParentID = 0;
+                    menus.ParentId = 0;
                 }
                 if (menus.Order == null)
                 {
