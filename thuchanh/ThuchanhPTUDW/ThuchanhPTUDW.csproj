@@ -180,7 +180,6 @@
     <Compile Include="Areas\Admin\Controllers\TopicController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GiohangController.cs" />
-    <Compile Include="Controllers\LienheController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
@@ -321,6 +320,7 @@
     <Content Include="Public\img\category\c5.jpg" />
     <Content Include="Public\img\category\s-p1.jpg" />
     <Content Include="Public\img\Fevicon.png" />
+    <Content Include="Public\img\gallery\logo.png" />
     <Content Include="Public\img\gallery\r1.jpg" />
     <Content Include="Public\img\gallery\r2.jpg" />
     <Content Include="Public\img\gallery\r3.jpg" />
@@ -2855,7 +2855,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -2884,6 +2883,8 @@
     <Content Include="Views\Module\MainMenuSub_1.cshtml" />
     <Content Include="Views\Module\MenuFooter.cshtml" />
     <Content Include="Views\Site\ProductCategory.cshtml" />
+    <Content Include="Views\Site\Gioithieu.cshtml" />
+    <Content Include="Views\Module\Slider.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

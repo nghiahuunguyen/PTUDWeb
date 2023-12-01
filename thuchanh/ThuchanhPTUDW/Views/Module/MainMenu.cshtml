@@ -2,30 +2,99 @@
 @using ThuchanhPTUDW.Library
 
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
-        <a class="navbar-brand logo_h" href="index.html"><img src="~/Public/img/gallery/logo.png" alt=""></a>
+    <div class="container-fluid">
+        <a class="navbar-brand logo_h" href="index.html"><img src="~/Public/img/LOGO.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
+
         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                <li class="nav-item"><a class="nav-link text-uppercase" href="https://localhost:44381/">Trang Chủ</a></li>
                 @foreach (var item in Model)
                 {
-                    @Html.Action("MainMenuSub", "Module", new { @id = @item.Id });
+                    if (item.TypeMenu == "topic")
+                    {
+                        @Html.Action("MainMenuSub", "Module", new { @id = @item.Id });
+                    }
+
+
+                }
+                @foreach (var item in Model)
+                {
+                    if (item.TypeMenu == "category")
+                    {
+                        @Html.Action("MainMenuSub", "Module", new { @id = @item.Id });
+                    }
+
+
+                }
+                @foreach (var item in Model)
+                {
+                    if (item.TypeMenu == "custom")
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="@item.Link">@item.Name</a>
+                        </li>
+                    }
                 }
             </ul>
 
             <ul class="nav-shop">
+                @*neu gio hang khac null*@
               
+                
 
-                <li class="nav-item"><button><i class="ti-search"></i></button></li>
-                @*<li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">@</span></button> </li>*@
-                <li class="nav-item"><a class="button button-header" href="~/gio-hang">Giỏ hàng</a></li>
+                <li class="nav-item">
+                    <div class="input-group mb-3 box-input">
+                        <form class="form" action="@Url.Action("Index","TimKiem")" method="post">
+                            <div class="position-relative">
+                                <input type="text" placeholder="Search..." id="searchString" name="searchString" class="form-control" />
+                                <button type="submit" class="btn btn-outline-secondary" id="searchButton">
+                                    <i class="ti-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+
+
+
+
+                @*<li class="nav-item">
+                    <a class="button button-header" href="~/gio-hang">
+                        <button>
+                            <i class="ti-shopping-cart"></i><span class="nav-shop__circle">@soluong</span>
+                        </button>
+                    </a>
+                </li>*@
+                <li class="nav-item">
+                    <a class="button button-header" href="~/dang-nhap">
+                        <button>
+                            <i class="ti-user"></i>
+                        </button>
+                    </a>
+                </li>
+
+
+
+
             </ul>
+
         </div>
     </div>
 </nav>
+<style>
+    #searchButton {
+        position: absolute;
+        right: 8px; /* Tùy chỉnh khoảng cách bên phải */
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background-color: transparent;
+    }
+</style>

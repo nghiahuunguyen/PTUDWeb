@@ -132,6 +132,9 @@ namespace THPTUDWeb.Controllers
             return View("PostDetail");
         }
         
-
+        public ActionResult Gioithieu()
+        {
+            return View();
+        }
     }
 }
