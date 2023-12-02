@@ -70,6 +70,6 @@ namespace MyClass.Model
 
         [Display(Name = "Trạng thái")]
         public int? Status { get; set; }
-
+        public string Detail { get; internal set; }
     }
 }

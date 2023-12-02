@@ -136,5 +136,9 @@ namespace THPTUDWeb.Controllers
         {
             return View();
         }
+        public ActionResult Dangnhap()
+        {
+            return View();
+        }
     }
 }

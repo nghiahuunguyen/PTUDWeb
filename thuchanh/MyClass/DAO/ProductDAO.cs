@@ -88,5 +88,6 @@ namespace MyClass.DAO
             db.Products.Remove(row);
             return db.SaveChanges();
         }
+        
     }
 }

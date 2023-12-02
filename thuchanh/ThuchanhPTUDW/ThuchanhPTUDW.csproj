@@ -178,15 +178,15 @@
     <Compile Include="Areas\Admin\Controllers\SliderController.cs" />
     <Compile Include="Areas\Admin\Controllers\SupplierController.cs" />
     <Compile Include="Areas\Admin\Controllers\TopicController.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GiohangController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Controllers\TimkiemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Library\CartItem.cs" />
+    <Compile Include="Library\XCart.cs" />
     <Compile Include="Library\XMessage.cs" />
     <Compile Include="Library\XString.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2855,26 +2855,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_LayoutSite.cshtml" />
     <Content Include="Views\Site\Index.cshtml" />
     <Content Include="Views\Module\MainMenu.cshtml" />
@@ -2885,12 +2865,13 @@
     <Content Include="Views\Site\ProductCategory.cshtml" />
     <Content Include="Views\Site\Gioithieu.cshtml" />
     <Content Include="Views\Module\Slider.cshtml" />
+    <Content Include="Views\Giohang\Index.cshtml" />
+    <Content Include="Views\Site\Error404.cshtml" />
+    <Content Include="Views\Site\Dangnhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Views\Contact\" />
-    <Folder Include="Views\Giohang\" />
     <Folder Include="Views\Timkiem\" />
   </ItemGroup>
   <ItemGroup>
