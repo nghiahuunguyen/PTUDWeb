@@ -60,7 +60,7 @@ namespace ThuchanhPTUDW
                defaults: new { controller = "Site", action = "Dangnhap", id = UrlParameter.Optional }
            );
 
-            //Khai bao cho URL co dinh: dang-nhap
+            //Khai bao cho URL co dinh: dang-ky
             routes.MapRoute(
                name: "Dangky",
                url: "dang-ky",
@@ -73,9 +73,6 @@ namespace ThuchanhPTUDW
                 url: "{slug}",
                 defaults: new { controller = "Site", action = "Index", id = UrlParameter.Optional }
             );
-
-
-
 
             routes.MapRoute(
                 name: "Default",
