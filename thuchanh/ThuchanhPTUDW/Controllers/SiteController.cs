@@ -140,5 +140,9 @@ namespace THPTUDWeb.Controllers
         {
             return View();
         }
+        public ActionResult Dangky()
+        {
+            return View();
+        }
     }
 }
