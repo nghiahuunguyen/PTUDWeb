@@ -70,3 +70,15 @@ D:\phattrienungdungweb\a\thuchanh\MyClass\obj\Debug\MyClass.csproj.CoreCompileIn
 D:\phattrienungdungweb\a\thuchanh\MyClass\obj\Debug\MyClass.csproj.CopyComplete
 D:\phattrienungdungweb\a\thuchanh\MyClass\obj\Debug\MyClass.dll
 D:\phattrienungdungweb\a\thuchanh\MyClass\obj\Debug\MyClass.pdb
+D:\PTUDWeb\thuchanh\MyClass\bin\Debug\MyClass.dll.config
+D:\PTUDWeb\thuchanh\MyClass\bin\Debug\MyClass.dll
+D:\PTUDWeb\thuchanh\MyClass\bin\Debug\MyClass.pdb
+D:\PTUDWeb\thuchanh\MyClass\bin\Debug\EntityFramework.dll
+D:\PTUDWeb\thuchanh\MyClass\bin\Debug\EntityFramework.SqlServer.dll
+D:\PTUDWeb\thuchanh\MyClass\bin\Debug\EntityFramework.xml
+D:\PTUDWeb\thuchanh\MyClass\bin\Debug\EntityFramework.SqlServer.xml
+D:\PTUDWeb\thuchanh\MyClass\obj\Debug\MyClass.csproj.AssemblyReference.cache
+D:\PTUDWeb\thuchanh\MyClass\obj\Debug\MyClass.csproj.CoreCompileInputs.cache
+D:\PTUDWeb\thuchanh\MyClass\obj\Debug\MyClass.csproj.Up2Date
+D:\PTUDWeb\thuchanh\MyClass\obj\Debug\MyClass.dll
+D:\PTUDWeb\thuchanh\MyClass\obj\Debug\MyClass.pdb
